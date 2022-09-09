@@ -1,9 +1,18 @@
 import React from "react";
+import SearchPanel from "../components/SearchPanel";
 
 const Home = () => {
+  //all
+  //random
+  //search
   return (
     <>
-      <h1>ok</h1>
+      <div className="container">
+        <div className="search">
+          <SearchPanel />
+        </div>
+        <div className="rail"></div>
+      </div>
     </>
   );
 };
