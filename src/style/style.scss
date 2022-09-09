@@ -105,3 +105,42 @@ $extra:lightgrey;
 }
 
 a{text-decoration: none;}
+
+.movie-detail-container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.movie-detail-image{
+    width:30%;
+    height: 80vh;
+    background-size:cover ;
+    background-position-y: top;
+    background-position-x: center;
+}
+.movie-detail-info{
+    width: 30%;
+    background-color: $primary;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-detail-info h3{
+    font-size: 50px;
+}
+
+.movie-detail-info p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+span{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.plot{text-align: justify;}

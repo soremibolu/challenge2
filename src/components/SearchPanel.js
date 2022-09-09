@@ -31,7 +31,6 @@ const SearchPanel = ({ handleSearch }) => {
           />
           <input
             className="input"
-            v
             type="text"
             placeholder="Director..."
             onChange={(e) => setDirector(e.target.value)}
@@ -40,6 +39,7 @@ const SearchPanel = ({ handleSearch }) => {
           <input
             className="input"
             type="number"
+            maxLength={4}
             placeholder="Year..."
             onChange={(e) => setYear(e.target.value)}
             value={year}
