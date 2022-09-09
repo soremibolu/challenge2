@@ -1,7 +1,7 @@
 import React from "react";
 import MovieCard from "../components/MovieCard";
 
-const Rail = () => {
+const Rail = ({ search }) => {
   return (
     <>
       <h3 className="rail-header">

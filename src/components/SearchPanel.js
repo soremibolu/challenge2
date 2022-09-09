@@ -1,14 +1,27 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-const SearchPanel = () => {
+const SearchPanel = ({ handleSearch }) => {
   const [title, setTitle] = useState("");
   const [director, setDirector] = useState("");
   const [year, setYear] = useState("");
+
+  const resetFields = () => {
+    setTitle("");
+    setDirector("");
+    setYear("");
+  };
+
   return (
     <>
       <div className="search-panel">
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSearch(title, director, year);
+            resetFields();
+          }}
+        >
           <input
             className="input"
             type="text"
