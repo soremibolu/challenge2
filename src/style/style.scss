@@ -1,7 +1,7 @@
-$primary: black;
-$secondary: gold;
-$secondary-hover: rgb(179, 153, 8);
-$extra: rgb(226, 226, 226);
+$primary: gold;
+$secondary: black;
+$primary-hover: rgb(179, 153, 8);
+$extra:lightgrey;
 
 *{
     margin: 0;
@@ -11,7 +11,19 @@ $extra: rgb(226, 226, 226);
 .container{
     width: 100%;
     min-height: 100vh;
-    background-color: $primary;
+    background-color: white;
+}
+
+.input{
+    border: none;
+    background-color: $extra;
+    padding: 10px;
+    width: 300px;
+    display: flex;
+    margin: 10px 0px;
+}
+.input:first-child {
+    margin-top: 50px;
 }
 
 .search-panel{
@@ -19,19 +31,10 @@ $extra: rgb(226, 226, 226);
     justify-content: center;
 }
 
-.input{
-    border: none;
-    background-color: white;
-    padding: 10px;
-    width: 300px;
-    display: flex;
-    margin: 10px 0px;
-}
-
 .search-button{
     border: none;
     border-radius: 3px;
-    background-color: $secondary;
+    background-color: $primary;
     width: 100px;
     padding: 10px;
     font-weight: bold;
@@ -40,7 +43,59 @@ $extra: rgb(226, 226, 226);
 }
 
 .search-button:hover{
-    background-color: $secondary-hover;
+    background-color: $primary-hover;
 }
 
 
+.card-container {
+    width: 200px;
+    height: 300px;
+    margin: 10px 10px;
+    border-radius: 3px;
+    box-shadow: 5px 10px 15px $extra;
+    cursor: pointer;
+    transition: .3s;
+    overflow-y: hidden;
+    background-color: black;
+    border-radius: 3px;
+}
+
+.card-container:hover {
+    height: 460px;
+    width: 300px;
+}
+
+.card-image {
+    width: 100%;
+    height: 300px;
+    background-position-y: top;
+    background-position-x: center;
+}
+
+.details {
+    padding: 10px;
+    color: white;
+}
+
+.details h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.details p{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.runtime{
+    color: $primary;
+}
+
+.rail {
+    display: flex;
+    overflow-x: auto;
+    margin: 20px;
+    width: 90%;
+}
+
+.rail-header{
+    margin: 30px;
+}

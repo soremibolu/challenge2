@@ -1,5 +1,6 @@
 import React from "react";
 import SearchPanel from "../components/SearchPanel";
+import Rail from "../components/Rail";
 
 const Home = () => {
   //all
@@ -11,7 +12,7 @@ const Home = () => {
         <div className="search">
           <SearchPanel />
         </div>
-        <div className="rail"></div>
+        <Rail />
       </div>
     </>
   );
