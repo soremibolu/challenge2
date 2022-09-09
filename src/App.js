@@ -1,9 +1,20 @@
 import React from "react";
-import "./App.css";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import "./style/style.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Info from "./pages/Info";
 
-function App() {
-  return <div className="App">smt</div>;
-}
+const App = () => {
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path={"/"} element={<Home />} />
+          <Route path={`/info/:id`} element={<Info />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+};
 
 export default App;
