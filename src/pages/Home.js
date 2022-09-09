@@ -32,9 +32,6 @@ const Home = () => {
       director: director ? director : "",
       year: year ? year : "",
     });
-    console.log(search);
-    //setSearch(searchTerms);
-    //console.log(search);
     setMovies(filterData(Data.movies, search));
   };
 
