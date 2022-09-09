@@ -39,7 +39,7 @@ const SearchPanel = ({ handleSearch }) => {
           />
           <input
             className="input"
-            type="text"
+            type="number"
             placeholder="Year..."
             onChange={(e) => setYear(e.target.value)}
             value={year}

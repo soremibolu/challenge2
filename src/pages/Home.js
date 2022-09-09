@@ -5,18 +5,15 @@ import Data from "../data/data.json";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState({
-    title: "",
-    director: "",
-    year: "",
-  });
+  const [search, setSearch] = useState({});
 
   const filterData = (MovieData, searchData) => {
     const filteredTitles = MovieData.filter(
-      (movie) => movie.title === searchData.title
+      (movie) => movie.title.toLowerCase() === searchData.title.toLowerCase()
     );
     const filteredDirectors = MovieData.filter(
-      (movie) => movie.director === searchData.director
+      (movie) =>
+        movie.director.toLowerCase() === searchData.director.toLowerCase()
     );
     const filteredYears = MovieData.filter(
       (movie) => movie.year === searchData.year
@@ -26,8 +23,7 @@ const Home = () => {
       filteredDirectors,
       filteredYears
     );
-
-    console.log(moviesFiltered);
+    return moviesFiltered;
   };
 
   const handleSearch = (title, director, year) => {
@@ -36,9 +32,11 @@ const Home = () => {
       director: director ? director : "",
       year: year ? year : "",
     });
-    filterData(Data.movies, search);
+    console.log(search);
+    //setSearch(searchTerms);
+    //console.log(search);
+    setMovies(filterData(Data.movies, search));
   };
-  //console.log(MovieData.movies);
 
   //all
   //random
@@ -49,7 +47,7 @@ const Home = () => {
         <div className="search">
           <SearchPanel handleSearch={handleSearch} />
         </div>
-        <Rail search={search} />
+        <Rail search={search} movies={movies} />
       </div>
     </>
   );

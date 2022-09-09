@@ -1,14 +1,17 @@
 import React from "react";
 
-const MovieCard = () => {
+const MovieCard = ({ title, runtime, year, posterURL }) => {
   return (
     <>
       <div className="card-container">
-        <div className="card-image"></div>
+        <div
+          className="card-image"
+          style={{ backgroundImage: `url(${posterURL})` }}
+        ></div>
         <div className="details">
-          <h2>title</h2>
-          <p>year</p>
-          <p className="runtime">100 minutes</p>
+          <h2>{title}</h2>
+          <p>{year}</p>
+          <p className="runtime">{runtime} minutes</p>
         </div>
       </div>
     </>
