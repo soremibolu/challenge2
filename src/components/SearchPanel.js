@@ -1,48 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "./Button";
 
-const SearchPanel = ({ handleSearch }) => {
-  const [title, setTitle] = useState("");
-  const [director, setDirector] = useState("");
-  const [year, setYear] = useState("");
-
-  const resetFields = () => {
-    setTitle("");
-    setDirector("");
-    setYear("");
-  };
-
+const SearchPanel = ({ handleChange, handleClick }) => {
   return (
     <>
       <div className="search-panel">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSearch(title, director, year);
-            resetFields();
-          }}
-        >
+        <form onSubmit={handleClick}>
           <input
+            id="title"
             className="input"
             type="text"
             placeholder="Title..."
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
+            onChange={handleChange}
           />
           <input
+            id="director"
             className="input"
             type="text"
             placeholder="Director..."
-            onChange={(e) => setDirector(e.target.value)}
-            value={director}
+            onChange={handleChange}
           />
           <input
+            id="year"
             className="input"
             type="number"
             maxLength={4}
             placeholder="Year..."
-            onChange={(e) => setYear(e.target.value)}
-            value={year}
+            onChange={handleChange}
           />
 
           <Button name="Search" />

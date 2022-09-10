@@ -5,7 +5,9 @@ import Data from "../data/data.json";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState({});
+  const [title, setTitle] = useState("");
+  const [director, setDirector] = useState("");
+  const [year, setYear] = useState("");
 
   const filterData = (MovieData, searchData) => {
     const filteredTitles = MovieData.filter(
@@ -26,25 +28,48 @@ const Home = () => {
     return moviesFiltered;
   };
 
-  const handleSearch = (title, director, year) => {
-    setSearch({
+  const handleChange = (e) => {
+    switch (e.target.id) {
+      case "title":
+        setTitle(e.target.value);
+        break;
+      case "director":
+        setDirector(e.target.value);
+        break;
+      case "year":
+        setYear(e.target.value);
+        break;
+    }
+  };
+
+  const resetFields = () => {
+    setTitle("");
+    setDirector("");
+    setYear("");
+  };
+
+  const handleSearch = (searchTerms) => {
+    setMovies(filterData(Data.movies, searchTerms));
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    const searchTerms = {
       title: title ? title : "",
       director: director ? director : "",
       year: year ? year : "",
-    });
-    setMovies(filterData(Data.movies, search));
+    };
+    handleSearch(searchTerms);
+    resetFields();
   };
 
-  //all
-  //random
-  //search
   return (
     <>
       <div className="container">
         <div className="search">
-          <SearchPanel handleSearch={handleSearch} />
+          <SearchPanel handleChange={handleChange} handleClick={handleClick} />
         </div>
-        <Rail search={search} movies={movies} />
+        <Rail movies={movies} />
       </div>
     </>
   );

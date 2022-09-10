@@ -107,24 +107,27 @@ $extra:lightgrey;
 a{text-decoration: none;}
 
 .movie-detail-container{
+    height: 80vh;
     margin-top: 50px;
     display: flex;
     justify-content: center;
 }
 
 .movie-detail-image{
+    height: 100%;
     width:30%;
-    height: 80vh;
     background-size:cover ;
     background-position-y: top;
     background-position-x: center;
 }
 .movie-detail-info{
+    height: calc(100% - 40px);
     width: 30%;
     background-color: $primary;
     padding: 20px;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .movie-detail-info h3{
